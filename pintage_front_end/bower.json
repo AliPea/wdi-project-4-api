@@ -1,0 +1,17 @@
+{
+  "name": "pintage_front_end",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "AliPea <pearseindeas@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/AliPea/wdi-project-4",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
