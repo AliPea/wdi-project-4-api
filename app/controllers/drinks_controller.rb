@@ -3,7 +3,7 @@ class DrinksController < ApplicationController
 
   # GET /drinks
   def index
-    @drinks = Drink.all
+    @drinks = @current_user.drinks
 
     render json: @drinks
   end
@@ -15,7 +15,7 @@ class DrinksController < ApplicationController
 
   # POST /drinks
   def create
-    @drink = Drink.new(drink_params)
+    @drink = @current_user.drinks.new(drink_params)
 
     if @drink.save
       render json: @drink, status: :created, location: @drink
