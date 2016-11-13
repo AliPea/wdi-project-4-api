@@ -3402,3 +3402,1952 @@ puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
 puma (3.6.0) lib/puma/server.rb:415:in `process_client'
 puma (3.6.0) lib/puma/server.rb:275:in `block in run'
 puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started POST "/api/login" for ::1 at 2016-11-09 14:39:51 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"alex@alex.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"alex@alex.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alex@alex.com"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (2.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (47.33ms)
+Completed 200 OK in 163ms (Views: 43.4ms | ActiveRecord: 22.5ms)
+
+
+Started GET "/api/users/1" for ::1 at 2016-11-09 14:39:51 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (1.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (21.21ms)
+Completed 200 OK in 29ms (Views: 21.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/api/users/1" for ::1 at 2016-11-09 20:13:12 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (1.5ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (14.46ms)
+Completed 200 OK in 24ms (Views: 14.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-09 22:13:00 +0000
+  
+PG::ConnectionBad (could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+):
+  
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `initialize'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `new'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `connect'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:721:in `new_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:765:in `checkout_new_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:744:in `try_to_checkout_new_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:705:in `acquire_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:501:in `checkout'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:364:in `connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:875:in `retrieve_connection'
+activerecord (5.0.0.1) lib/active_record/connection_handling.rb:128:in `retrieve_connection'
+activerecord (5.0.0.1) lib/active_record/connection_handling.rb:91:in `connection'
+activerecord (5.0.0.1) lib/active_record/migration.rb:558:in `connection'
+activerecord (5.0.0.1) lib/active_record/migration.rb:545:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started POST "/api/login" for ::1 at 2016-11-11 14:08:22 +0000
+  
+PG::ConnectionBad (could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+):
+  
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `initialize'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `new'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `connect'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:721:in `new_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:765:in `checkout_new_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:744:in `try_to_checkout_new_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:705:in `acquire_connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:501:in `checkout'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:364:in `connection'
+activerecord (5.0.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:875:in `retrieve_connection'
+activerecord (5.0.0.1) lib/active_record/connection_handling.rb:128:in `retrieve_connection'
+activerecord (5.0.0.1) lib/active_record/connection_handling.rb:91:in `connection'
+activerecord (5.0.0.1) lib/active_record/migration.rb:558:in `connection'
+activerecord (5.0.0.1) lib/active_record/migration.rb:545:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started POST "/api/login" for ::1 at 2016-11-11 14:08:44 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.0.1) lib/active_record/migration.rb:572:in `check_pending!'
+activerecord (5.0.0.1) lib/active_record/migration.rb:548:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started POST "/api/login" for ::1 at 2016-11-11 14:09:13 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.0.1) lib/active_record/migration.rb:572:in `check_pending!'
+activerecord (5.0.0.1) lib/active_record/migration.rb:548:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/" for ::1 at 2016-11-11 14:09:28 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.0.1) lib/active_record/migration.rb:572:in `check_pending!'
+activerecord (5.0.0.1) lib/active_record/migration.rb:548:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/" for ::1 at 2016-11-11 14:09:28 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.0.1) lib/active_record/migration.rb:572:in `check_pending!'
+activerecord (5.0.0.1) lib/active_record/migration.rb:548:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/favicon.ico" for ::1 at 2016-11-11 14:09:29 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.0.1) lib/active_record/migration.rb:572:in `check_pending!'
+activerecord (5.0.0.1) lib/active_record/migration.rb:548:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started POST "/api/login" for ::1 at 2016-11-11 14:09:42 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.0.1) lib/active_record/migration.rb:572:in `check_pending!'
+activerecord (5.0.0.1) lib/active_record/migration.rb:548:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started POST "/api/login" for ::1 at 2016-11-11 14:10:04 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.0.1) lib/active_record/migration.rb:572:in `check_pending!'
+activerecord (5.0.0.1) lib/active_record/migration.rb:548:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started POST "/api/login" for ::1 at 2016-11-11 14:10:31 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.0.1) lib/active_record/migration.rb:572:in `check_pending!'
+activerecord (5.0.0.1) lib/active_record/migration.rb:548:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started POST "/api/login" for ::1 at 2016-11-11 14:12:14 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.0.1) lib/active_record/migration.rb:572:in `check_pending!'
+activerecord (5.0.0.1) lib/active_record/migration.rb:548:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started POST "/api/login" for ::1 at 2016-11-11 14:39:12 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.0.1) lib/active_record/migration.rb:572:in `check_pending!'
+activerecord (5.0.0.1) lib/active_record/migration.rb:548:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started POST "/api/login" for ::1 at 2016-11-11 14:43:30 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.0.1) lib/active_record/migration.rb:572:in `check_pending!'
+activerecord (5.0.0.1) lib/active_record/migration.rb:548:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started POST "/api/login" for ::1 at 2016-11-11 15:06:12 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.0.1) lib/active_record/migration.rb:572:in `check_pending!'
+activerecord (5.0.0.1) lib/active_record/migration.rb:548:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started POST "/api/login" for ::1 at 2016-11-11 15:09:28 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.0.1) lib/active_record/migration.rb:572:in `check_pending!'
+activerecord (5.0.0.1) lib/active_record/migration.rb:548:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started POST "/api/login" for ::1 at 2016-11-11 15:09:30 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.0.1) lib/active_record/migration.rb:572:in `check_pending!'
+activerecord (5.0.0.1) lib/active_record/migration.rb:548:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (128.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "pintage_development"[0m
+  [1m[35m (122.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "pintage_test"[0m
+  [1m[35m (326.2ms)[0m  [1m[35mCREATE DATABASE "pintage_development" ENCODING = 'unicode'[0m
+  [1m[35m (239.1ms)[0m  [1m[35mCREATE DATABASE "pintage_test" ENCODING = 'unicode'[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3313717327239323550);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20161025190010)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "username" character varying, "first_name" character varying, "last_name" character varying, "email" character varying, "password_digest" character varying)[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161025190010"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDrinks (20161025190011)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "drinks" ("id" serial primary key, "user_id" integer, "name" character varying, "quantity" integer, "units" integer, "price" decimal(8,2), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_ea1b234e79"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_drinks_on_user_id" ON "drinks"  ("user_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161025190011"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUserDrinks (20161109205512)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "user_drinks" ("id" serial primary key, "user_id" integer, "drink_id" integer, "quantity" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_2fa83bc9ae"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_d78f282bac"
+FOREIGN KEY ("drink_id")
+  REFERENCES "drinks" ("id")
+)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_user_drinks_on_user_id" ON "user_drinks"  ("user_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_user_drinks_on_drink_id" ON "user_drinks"  ("drink_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161109205512"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-11-11 15:11:59 UTC], ["updated_at", 2016-11-11 15:11:59 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3313717327239323550)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (5.3ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'drinks'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'user_drinks'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "alex"], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "email", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "alex"], ["first_name", "Alex"], ["last_name", "Chin"], ["email", "alex@alex.com"], ["password_digest", "$2a$10$RRxvtp5RI4iyyPnYJyoexuPFRiuSsZKi2XyYryjiDM9pe7hpYonu6"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "dan"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "email", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "dan"], ["first_name", "Dan"], ["last_name", "theMan"], ["email", "dan@dan.com"], ["password_digest", "$2a$10$FlDFdnNq96g9MATH5ttmmeBHVGHyibtkAVkvCcPBp3p3vht5oOOte"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "will"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "email", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "will"], ["first_name", "Will"], ["last_name", "Marples"], ["email", "will@will.com"], ["password_digest", "$2a$10$3Xtkm42lI1ne/FQoZ4XLt.WYMNyEdk/msGfCe2Q33CQ7MNurf2KG."]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.1ms)[0m  [1m[32mINSERT INTO "drinks" ("user_id", "name", "quantity", "units", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 1], ["name", "Budweiser"], ["quantity", 3], ["units", 2], ["price", #<BigDecimal:7ff582d9b6e0,'0.3E1',9(18)>], ["created_at", 2016-11-11 15:11:59 UTC], ["updated_at", 2016-11-11 15:11:59 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "drinks" ("user_id", "name", "quantity", "units", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 2], ["name", "Blue Moon"], ["quantity", 4], ["units", 2], ["price", #<BigDecimal:7ff582dc07b0,'0.3E1',9(18)>], ["created_at", 2016-11-11 15:11:59 UTC], ["updated_at", 2016-11-11 15:11:59 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "drinks" ("user_id", "name", "quantity", "units", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 1], ["name", "Pyramid"], ["quantity", 6], ["units", 2], ["price", #<BigDecimal:7ff586852e78,'0.3E1',9(18)>], ["created_at", 2016-11-11 15:11:59 UTC], ["updated_at", 2016-11-11 15:11:59 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "drinks" ("user_id", "name", "quantity", "units", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 3], ["name", "Anchor Steam"], ["quantity", 2], ["units", 2], ["price", #<BigDecimal:7ff582de0da8,'0.3E1',9(18)>], ["created_at", 2016-11-11 15:11:59 UTC], ["updated_at", 2016-11-11 15:11:59 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/api/login" for ::1 at 2016-11-11 15:12:23 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"alex@alex.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"alex@alex.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alex@alex.com"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.7ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (38.18ms)
+Completed 200 OK in 132ms (Views: 36.8ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/api/users/1" for ::1 at 2016-11-11 15:12:23 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.5ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.17ms)
+Completed 200 OK in 11ms (Views: 5.2ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/api/login" for ::1 at 2016-11-13 12:20:56 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"alex@alex.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"alex@alex.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alex@alex.com"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.8ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (39.77ms)
+Completed 200 OK in 141ms (Views: 38.1ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/api/users/1" for ::1 at 2016-11-13 12:20:56 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (14.05ms)
+Completed 200 OK in 20ms (Views: 14.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/users/1" for ::1 at 2016-11-13 12:23:28 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (2.88ms)
+Completed 200 OK in 6ms (Views: 3.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/api/register" for ::1 at 2016-11-13 12:24:11 +0000
+Processing by AuthenticationsController#register as HTML
+  Parameters: {"username"=>"johnnie", "firstName"=>"johnnie", "lastName"=>"de La Moriniere", "image"=>"fillmurray.com/200/200", "email"=>"johnnie@johnnie.com", "password"=>"[FILTERED]", "passwordConfirmation"=>"[FILTERED]", "authentication"=>{"username"=>"johnnie", "firstName"=>"johnnie", "lastName"=>"de La Moriniere", "image"=>"fillmurray.com/200/200", "email"=>"johnnie@johnnie.com", "password"=>"[FILTERED]", "passwordConfirmation"=>"[FILTERED]"}}
+DEPRECATION WARNING: Method to_hash is deprecated and will be removed in Rails 5.1, as `ActionController::Parameters` no longer inherits from hash. Using this deprecated behavior exposes potential security problems. If you continue to use this method you may be creating a security vulnerability in your app that can be exploited. Instead, consider using one of these documented methods which are not deprecated: http://api.rubyonrails.org/v5.0.0.1/classes/ActionController/Parameters.html (called from merge! at /Users/aliciapearse/development/projects/wdi-project-4/wdi-project-4-api/app/controllers/authentications_controller.rb:28)
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "johnnie"], ["LIMIT", 1]]
+  [1m[35mSQL (5.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "johnnie"], ["email", "johnnie@johnnie.com"], ["password_digest", "$2a$10$WmKVhrMz7T9/9E8mg2WTtuEs/0j7emel1LJVXuUmSyQ.7sPu05t/S"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers]   [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.73ms)
+Completed 200 OK in 88ms (Views: 1.8ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/api/users/4" for ::1 at 2016-11-13 12:24:12 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.06ms)
+Completed 200 OK in 14ms (Views: 4.4ms | ActiveRecord: 6.2ms)
+
+
+Started POST "/api/register" for ::1 at 2016-11-13 12:24:47 +0000
+Processing by AuthenticationsController#register as HTML
+  Parameters: {"username"=>"Alfredo", "firstName"=>"Alfredo", "lastName"=>"Maria", "image"=>"fillmurray.com/200/200", "email"=>"alfredo@alfredo", "password"=>"[FILTERED]", "passwordConfirmation"=>"[FILTERED]", "authentication"=>{"username"=>"Alfredo", "firstName"=>"Alfredo", "lastName"=>"Maria", "image"=>"fillmurray.com/200/200", "email"=>"alfredo@alfredo", "password"=>"[FILTERED]", "passwordConfirmation"=>"[FILTERED]"}}
+DEPRECATION WARNING: Method to_hash is deprecated and will be removed in Rails 5.1, as `ActionController::Parameters` no longer inherits from hash. Using this deprecated behavior exposes potential security problems. If you continue to use this method you may be creating a security vulnerability in your app that can be exploited. Instead, consider using one of these documented methods which are not deprecated: http://api.rubyonrails.org/v5.0.0.1/classes/ActionController/Parameters.html (called from merge! at /Users/aliciapearse/development/projects/wdi-project-4/wdi-project-4-api/app/controllers/authentications_controller.rb:28)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alfredo"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "Alfredo"], ["email", "alfredo@alfredo"], ["password_digest", "$2a$10$e9NJFRKJ3yjnc.5Yii6LZOKP8N.7Ap1CIKgJm602c98IO775qyOma"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers]   [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.75ms)
+Completed 200 OK in 75ms (Views: 1.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/users/5" for ::1 at 2016-11-13 12:24:47 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (6.02ms)
+Completed 200 OK in 11ms (Views: 6.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/api/drinks" for ::1 at 2016-11-13 12:25:03 +0000
+Processing by DrinksController#create as HTML
+  Parameters: {"drink"=>{"name"=>"Guiness", "quantity"=>1, "units"=>2, "price"=>4.5}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.9ms)[0m  [1m[32mINSERT INTO "drinks" ("user_id", "name", "quantity", "units", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 5], ["name", "Guiness"], ["quantity", 1], ["units", 2], ["price", #<BigDecimal:7f835c9ed9a0,'0.45E1',18(27)>], ["created_at", 2016-11-13 12:25:03 UTC], ["updated_at", 2016-11-13 12:25:03 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered DrinkSerializer with ActiveModelSerializers::Adapter::Attributes (1.24ms)
+Completed 201 Created in 14ms (Views: 2.2ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/api/users/5" for ::1 at 2016-11-13 12:25:03 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (3.47ms)
+Completed 200 OK in 7ms (Views: 3.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/users/5" for ::1 at 2016-11-13 12:27:27 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (2.97ms)
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/users/5" for ::1 at 2016-11-13 12:27:28 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (2.52ms)
+Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/users/5" for ::1 at 2016-11-13 12:27:30 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (3.65ms)
+Completed 200 OK in 7ms (Views: 3.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/users/5" for ::1 at 2016-11-13 12:27:41 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (2.54ms)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/users/5" for ::1 at 2016-11-13 12:28:00 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (3.36ms)
+Completed 200 OK in 7ms (Views: 3.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/users/5" for ::1 at 2016-11-13 12:28:22 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (2.23ms)
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/5" for ::1 at 2016-11-13 12:28:44 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (2.12ms)
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/5" for ::1 at 2016-11-13 12:28:46 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (2.49ms)
+Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/users/5" for ::1 at 2016-11-13 12:32:52 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (2.07ms)
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/5" for ::1 at 2016-11-13 12:32:59 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (2.41ms)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/users/5" for ::1 at 2016-11-13 12:33:16 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (12.33ms)
+Completed 200 OK in 16ms (Views: 12.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/users/5" for ::1 at 2016-11-13 12:33:33 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (3.27ms)
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/users/5" for ::1 at 2016-11-13 12:33:45 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.5ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (2.57ms)
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/users/5" for ::1 at 2016-11-13 12:33:50 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1.84ms)
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/5" for ::1 at 2016-11-13 12:33:57 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1.86ms)
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/users/5" for ::1 at 2016-11-13 12:34:30 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (3.3ms)
+Completed 200 OK in 7ms (Views: 3.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/users/5" for ::1 at 2016-11-13 12:34:45 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1.86ms)
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/users/5" for ::1 at 2016-11-13 12:34:55 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (2.23ms)
+Completed 200 OK in 8ms (Views: 2.5ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/api/users/5" for ::1 at 2016-11-13 12:35:17 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (2.28ms)
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/register" for ::1 at 2016-11-13 13:15:28 +0000
+Processing by AuthenticationsController#register as HTML
+  Parameters: {"username"=>"Mel", "firstName"=>"Mel", "lastName"=>"Mel", "image"=>"fi", "authentication"=>{"username"=>"Mel", "firstName"=>"Mel", "lastName"=>"Mel", "image"=>"fi"}}
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 3.5ms)
+
+
+  
+NoMethodError (undefined method `has_attached_file' for #<Class:0x007f835f92b5f0>):
+  
+app/models/user.rb:4:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/authentications_controller.rb:5:in `register'
+Started POST "/api/register" for ::1 at 2016-11-13 13:15:41 +0000
+Processing by AuthenticationsController#register as HTML
+  Parameters: {"username"=>"Mel", "firstName"=>"Mel", "lastName"=>"Mel", "image"=>"fillmurray.com/200/200", "email"=>"mel@mel.com", "password"=>"[FILTERED]", "passwordConfirmation"=>"[FILTERED]", "authentication"=>{"username"=>"Mel", "firstName"=>"Mel", "lastName"=>"Mel", "image"=>"fillmurray.com/200/200", "email"=>"mel@mel.com", "password"=>"[FILTERED]", "passwordConfirmation"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `has_attached_file' for #<Class:0x007f835b91a538>):
+  
+app/models/user.rb:4:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/authentications_controller.rb:5:in `register'
+Started POST "/api/register" for ::1 at 2016-11-13 13:15:44 +0000
+Processing by AuthenticationsController#register as HTML
+  Parameters: {"username"=>"Mel", "firstName"=>"Mel", "lastName"=>"Mel", "image"=>"fillmurray.com/200/200", "email"=>"mel@mel.com", "password"=>"[FILTERED]", "passwordConfirmation"=>"[FILTERED]", "authentication"=>{"username"=>"Mel", "firstName"=>"Mel", "lastName"=>"Mel", "image"=>"fillmurray.com/200/200", "email"=>"mel@mel.com", "password"=>"[FILTERED]", "passwordConfirmation"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `has_attached_file' for #<Class:0x007f835fc5dc78>):
+  
+app/models/user.rb:4:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/authentications_controller.rb:5:in `register'
+Started POST "/api/register" for ::1 at 2016-11-13 13:15:51 +0000
+Processing by AuthenticationsController#register as HTML
+  Parameters: {"username"=>"Mel", "firstName"=>"Mel", "lastName"=>"Mel", "image"=>"fillmurray.com/200/200", "email"=>"mel@mel.com", "password"=>"[FILTERED]", "passwordConfirmation"=>"[FILTERED]", "authentication"=>{"username"=>"Mel", "firstName"=>"Mel", "lastName"=>"Mel", "image"=>"fillmurray.com/200/200", "email"=>"mel@mel.com", "password"=>"[FILTERED]", "passwordConfirmation"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `has_attached_file' for #<Class:0x007f835d40a140>):
+  
+app/models/user.rb:4:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/authentications_controller.rb:5:in `register'
+Started POST "/api/register" for ::1 at 2016-11-13 13:16:37 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AuthenticationsController#register as HTML
+  Parameters: {"username"=>"Mel", "firstName"=>"Mel", "lastName"=>"Mel", "image"=>"fillmurray.com/200/200", "email"=>"mel@mel.com", "password"=>"[FILTERED]", "passwordConfirmation"=>"[FILTERED]", "authentication"=>{"username"=>"Mel", "firstName"=>"Mel", "lastName"=>"Mel", "image"=>"fillmurray.com/200/200", "email"=>"mel@mel.com", "password"=>"[FILTERED]", "passwordConfirmation"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 2.2ms)
+
+
+  
+NoMethodError (undefined method `has_attached_file' for #<Class:0x007fe84a7d0e80>):
+  
+app/models/user.rb:4:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/authentications_controller.rb:5:in `register'
+Started POST "/api/login" for ::1 at 2016-11-13 13:18:50 +0000
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"nat@nat.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"nat@nat.com", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `has_attached_file' for #<Class:0x007fe84be20e10>):
+  
+app/models/user.rb:4:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/authentications_controller.rb:16:in `login'
+Started POST "/api/register" for ::1 at 2016-11-13 13:19:11 +0000
+Processing by AuthenticationsController#register as HTML
+  Parameters: {"username"=>"Nat", "firstName"=>"Nat", "lastName"=>"Nat", "image"=>"fillmurray.com/200/200", "email"=>"nat@nat.com", "password"=>"[FILTERED]", "passwordConfirmation"=>"[FILTERED]", "authentication"=>{"username"=>"Nat", "firstName"=>"Nat", "lastName"=>"Nat", "image"=>"fillmurray.com/200/200", "email"=>"nat@nat.com", "password"=>"[FILTERED]", "passwordConfirmation"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `has_attached_file' for #<Class:0x007fe84c15f068>):
+  
+app/models/user.rb:4:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/authentications_controller.rb:5:in `register'
+Started POST "/api/register" for ::1 at 2016-11-13 13:19:13 +0000
+Processing by AuthenticationsController#register as HTML
+  Parameters: {"username"=>"Nat", "firstName"=>"Nat", "lastName"=>"Nat", "image"=>"fillmurray.com/200/200", "email"=>"nat@nat.com", "password"=>"[FILTERED]", "passwordConfirmation"=>"[FILTERED]", "authentication"=>{"username"=>"Nat", "firstName"=>"Nat", "lastName"=>"Nat", "image"=>"fillmurray.com/200/200", "email"=>"nat@nat.com", "password"=>"[FILTERED]", "passwordConfirmation"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `has_attached_file' for #<Class:0x007fe84a8a9a78>):
+  
+app/models/user.rb:4:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/authentications_controller.rb:5:in `register'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3313717327239323550);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3313717327239323550)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'drinks'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'user_drinks'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+Started POST "/api/login" for ::1 at 2016-11-13 13:21:18 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"alex@alex.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"alex@alex.com", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 2.1ms)
+
+
+  
+NoMethodError (undefined method `has_attached_file' for #<Class:0x007f8adbe23f20>):
+  
+app/models/user.rb:4:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/authentications_controller.rb:16:in `login'
+Started POST "/api/login" for ::1 at 2016-11-13 13:21:26 +0000
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"alfredo@alfredo", "password"=>"[FILTERED]", "authentication"=>{"email"=>"alfredo@alfredo", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `has_attached_file' for #<Class:0x007f8adbb2c010>):
+  
+app/models/user.rb:4:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/authentications_controller.rb:16:in `login'
+Started POST "/api/login" for ::1 at 2016-11-13 13:23:18 +0000
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"alicia@alicia.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"alicia@alicia.com", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `has_attached_file' for #<Class:0x007f8ade8f19f0>):
+  
+app/models/user.rb:4:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/authentications_controller.rb:16:in `login'
+Started POST "/api/login" for ::1 at 2016-11-13 13:24:28 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"alicia@alicia.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"alicia@alicia.com", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 2.4ms)
+
+
+  
+NoMethodError (undefined method `has_attached_file' for #<Class:0x007ffdb52c6f18>):
+  
+app/models/user.rb:4:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/authentications_controller.rb:16:in `login'
+Started POST "/api/login" for ::1 at 2016-11-13 13:43:55 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"alicia@alicia.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"alicia@alicia.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alicia@alicia.com"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 401 Unauthorized in 18ms (Views: 3.0ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/api/register" for ::1 at 2016-11-13 13:48:29 +0000
+Processing by AuthenticationsController#register as HTML
+  Parameters: {"username"=>"Alicia", "firstName"=>"Alicia", "lastName"=>"Alicia", "image"=>"fillmurray.com/200/200", "email"=>"alicia@alicia.com", "password"=>"[FILTERED]", "passwordConfirmation"=>"[FILTERED]", "authentication"=>{"username"=>"Alicia", "firstName"=>"Alicia", "lastName"=>"Alicia", "image"=>"fillmurray.com/200/200", "email"=>"alicia@alicia.com", "password"=>"[FILTERED]", "passwordConfirmation"=>"[FILTERED]"}}
+DEPRECATION WARNING: Method to_hash is deprecated and will be removed in Rails 5.1, as `ActionController::Parameters` no longer inherits from hash. Using this deprecated behavior exposes potential security problems. If you continue to use this method you may be creating a security vulnerability in your app that can be exploited. Instead, consider using one of these documented methods which are not deprecated: http://api.rubyonrails.org/v5.0.0.1/classes/ActionController/Parameters.html (called from merge! at /Users/aliciapearse/development/projects/wdi-project-4/wdi-project-4-api/app/controllers/authentications_controller.rb:28)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Alicia"], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "Alicia"], ["email", "alicia@alicia.com"], ["password_digest", "$2a$10$Au.qWGB/bIgXxrob46I2xeH6qsGrgdT9NEGHlsHpRrsF9vLIu7Svy"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers]   [1m[36mDrink Load (0.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (28.03ms)
+Completed 200 OK in 129ms (Views: 25.9ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/api/users/6" for ::1 at 2016-11-13 13:48:29 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.5ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.11ms)
+Completed 200 OK in 10ms (Views: 4.8ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/api/drinks" for ::1 at 2016-11-13 13:48:51 +0000
+Processing by DrinksController#create as HTML
+  Parameters: {"drink"=>{"name"=>"Budweiser", "quantity"=>1, "units"=>2, "price"=>3.5}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "drinks" ("user_id", "name", "quantity", "units", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 6], ["name", "Budweiser"], ["quantity", 1], ["units", 2], ["price", #<BigDecimal:7fd80e842630,'0.35E1',18(27)>], ["created_at", 2016-11-13 13:48:51 UTC], ["updated_at", 2016-11-13 13:48:51 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered DrinkSerializer with ActiveModelSerializers::Adapter::Attributes (5.29ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 3.8ms)
+
+
+  
+NoMethodError (undefined method `calories' for #<Drink:0x007fd80c9ab488>):
+  
+app/controllers/drinks_controller.rb:21:in `create'
+Started POST "/api/drinks" for ::1 at 2016-11-13 13:50:12 +0000
+Processing by DrinksController#create as HTML
+  Parameters: {"drink"=>{"name"=>"Budweiser", "quantity"=>1, "units"=>2, "price"=>3.5}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "drinks" ("user_id", "name", "quantity", "units", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 6], ["name", "Budweiser"], ["quantity", 1], ["units", 2], ["price", #<BigDecimal:7fd80ef3b810,'0.35E1',18(27)>], ["created_at", 2016-11-13 13:50:12 UTC], ["updated_at", 2016-11-13 13:50:12 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered DrinkSerializer with ActiveModelSerializers::Adapter::Attributes (4.96ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 2.1ms)
+
+
+  
+NoMethodError (undefined method `calories' for #<Drink:0x007fd80ef40798>):
+  
+app/controllers/drinks_controller.rb:21:in `create'
+Started GET "/api/users/6" for ::1 at 2016-11-13 13:51:28 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (21.47ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 8.5ms)
+
+
+  
+NoMethodError (undefined method `calories' for #<Drink:0x007fd80ef89a38>):
+  
+app/controllers/users_controller.rb:13:in `show'
+Started GET "/api/users/6" for ::1 at 2016-11-13 13:51:35 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (15.41ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.9ms)
+
+
+  
+NoMethodError (undefined method `calories' for #<Drink:0x007fd80ee4d228>):
+  
+app/controllers/users_controller.rb:13:in `show'
+Started POST "/api/login" for ::1 at 2016-11-13 13:51:43 +0000
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"alicia@alicia.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"alicia@alicia.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alicia@alicia.com"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.61ms)
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 0.7ms)
+
+
+  
+NoMethodError (undefined method `calories' for #<Drink:0x007fd80c024608>):
+  
+app/controllers/authentications_controller.rb:19:in `login'
+Started POST "/api/login" for ::1 at 2016-11-13 13:51:51 +0000
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"alex@alex.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"alex@alex.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alex@alex.com"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.38ms)
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `calories' for #<Drink:0x007fd80ea4ff68>):
+  
+app/controllers/authentications_controller.rb:19:in `login'
+Started POST "/api/login" for ::1 at 2016-11-13 13:52:54 +0000
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"alicia@alicia.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"alicia@alicia.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alicia@alicia.com"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (22.53ms)
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 7.6ms)
+
+
+  
+NoMethodError (undefined method `calories' for #<Drink:0x007fd80e938b70>):
+  
+app/controllers/authentications_controller.rb:19:in `login'
+Started POST "/api/login" for ::1 at 2016-11-13 13:56:25 +0000
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"alicia@alicia.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"alicia@alicia.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alicia@alicia.com"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (15.64ms)
+Completed 200 OK in 102ms (Views: 13.9ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/api/users/6" for ::1 at 2016-11-13 13:56:25 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (6.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (23.58ms)
+Completed 200 OK in 27ms (Views: 18.4ms | ActiveRecord: 6.8ms)
+
+
+Started POST "/api/drinks" for ::1 at 2016-11-13 13:56:41 +0000
+Processing by DrinksController#create as HTML
+  Parameters: {"drink"=>{"name"=>"Vodka", "quantity"=>1, "units"=>1, "price"=>6}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "drinks" ("user_id", "name", "quantity", "units", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 6], ["name", "Vodka"], ["quantity", 1], ["units", 1], ["price", #<BigDecimal:7fd81012aa58,'0.6E1',9(18)>], ["created_at", 2016-11-13 13:56:41 UTC], ["updated_at", 2016-11-13 13:56:41 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered DrinkSerializer with ActiveModelSerializers::Adapter::Attributes (4.05ms)
+Completed 201 Created in 13ms (Views: 5.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/users/6" for ::1 at 2016-11-13 13:56:41 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (3.69ms)
+Completed 200 OK in 9ms (Views: 3.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/users/6" for ::1 at 2016-11-13 13:56:50 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (2.87ms)
+Completed 200 OK in 6ms (Views: 3.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/login" for ::1 at 2016-11-13 14:07:12 +0000
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"alicia@alicia.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"alicia@alicia.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alicia@alicia.com"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.32ms)
+Completed 200 OK in 74ms (Views: 2.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/6" for ::1 at 2016-11-13 14:07:12 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (3.09ms)
+Completed 200 OK in 8ms (Views: 3.5ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/api/login" for ::1 at 2016-11-13 14:17:40 +0000
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"alicia@alicia.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"alicia@alicia.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alicia@alicia.com"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.87ms)
+Completed 200 OK in 67ms (Views: 3.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/6" for ::1 at 2016-11-13 14:17:40 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.06ms)
+Completed 200 OK in 12ms (Views: 5.5ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/api/login" for ::1 at 2016-11-13 14:22:14 +0000
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"alicia@alicia.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"alicia@alicia.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alicia@alicia.com"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.88ms)
+Completed 200 OK in 72ms (Views: 3.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/6" for ::1 at 2016-11-13 14:22:15 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (3.69ms)
+Completed 200 OK in 9ms (Views: 4.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/users/6" for ::1 at 2016-11-13 14:45:17 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (17.31ms)
+Completed 200 OK in 41ms (Views: 19.5ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/api/login" for ::1 at 2016-11-13 14:45:29 +0000
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"alicia@alicia.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"alicia@alicia.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alicia@alicia.com"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.88ms)
+Completed 200 OK in 70ms (Views: 3.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/users/6" for ::1 at 2016-11-13 14:45:29 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.27ms)
+Completed 200 OK in 9ms (Views: 5.3ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/api/login" for ::1 at 2016-11-13 14:45:45 +0000
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"alicia@alicia.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"alicia@alicia.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alicia@alicia.com"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.21ms)
+Completed 200 OK in 70ms (Views: 4.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/users/6" for ::1 at 2016-11-13 14:45:45 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (3.79ms)
+Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/users/6" for ::1 at 2016-11-13 15:29:11 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (22.03ms)
+Completed 200 OK in 54ms (Views: 20.0ms | ActiveRecord: 11.7ms)
+
+
+Started POST "/api/drinks" for ::1 at 2016-11-13 15:29:32 +0000
+Processing by DrinksController#create as HTML
+  Parameters: {"drink"=>{"name"=>"wine", "quantity"=>1, "units"=>1, "price"=>3.5}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "drinks" ("user_id", "name", "quantity", "units", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 6], ["name", "wine"], ["quantity", 1], ["units", 1], ["price", #<BigDecimal:7fd80c08ebc0,'0.35E1',18(27)>], ["created_at", 2016-11-13 15:29:32 UTC], ["updated_at", 2016-11-13 15:29:32 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered DrinkSerializer with ActiveModelSerializers::Adapter::Attributes (2.02ms)
+Completed 201 Created in 12ms (Views: 4.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/users/6" for ::1 at 2016-11-13 15:29:32 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.5ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (5.08ms)
+Completed 200 OK in 9ms (Views: 5.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/users/6" for ::1 at 2016-11-13 15:30:20 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (37.22ms)
+Completed 200 OK in 77ms (Views: 47.6ms | ActiveRecord: 9.8ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3313717327239323550);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3313717327239323550)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'drinks'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'user_drinks'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+Started GET "/api/users/6" for ::1 at 2016-11-13 15:32:21 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (38.78ms)
+Completed 200 OK in 79ms (Views: 47.3ms | ActiveRecord: 9.7ms)
+
+
+Started POST "/api/drinks" for ::1 at 2016-11-13 15:32:25 +0000
+Processing by DrinksController#create as HTML
+  Parameters: {"drink"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: drink):
+  
+app/controllers/drinks_controller.rb:49:in `drink_params'
+app/controllers/drinks_controller.rb:18:in `create'
+Started POST "/api/drinks" for ::1 at 2016-11-13 15:32:26 +0000
+Processing by DrinksController#create as HTML
+  Parameters: {"drink"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: drink):
+  
+app/controllers/drinks_controller.rb:49:in `drink_params'
+app/controllers/drinks_controller.rb:18:in `create'
+Started POST "/api/drinks" for ::1 at 2016-11-13 15:33:49 +0000
+Processing by DrinksController#create as HTML
+  Parameters: {"drink"=>{"name"=>"Wine", "quantity"=>1, "units"=>2, "price"=>6}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "drinks" ("user_id", "name", "quantity", "units", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 6], ["name", "Wine"], ["quantity", 1], ["units", 2], ["price", #<BigDecimal:7fda07995398,'0.6E1',9(18)>], ["created_at", 2016-11-13 15:33:49 UTC], ["updated_at", 2016-11-13 15:33:49 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered DrinkSerializer with ActiveModelSerializers::Adapter::Attributes (0.91ms)
+Completed 201 Created in 12ms (Views: 2.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/users/6" for ::1 at 2016-11-13 15:33:49 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.19ms)
+Completed 200 OK in 9ms (Views: 4.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/users/6" for ::1 at 2016-11-13 15:34:32 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (3.01ms)
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/drinks" for ::1 at 2016-11-13 15:34:45 +0000
+Processing by DrinksController#create as HTML
+  Parameters: {"drink"=>{"name"=>"Beer", "quantity"=>1, "units"=>2, "price"=>5.5}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "drinks" ("user_id", "name", "quantity", "units", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 6], ["name", "Beer"], ["quantity", 1], ["units", 2], ["price", #<BigDecimal:7fda07a8db88,'0.55E1',18(27)>], ["created_at", 2016-11-13 15:34:45 UTC], ["updated_at", 2016-11-13 15:34:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered DrinkSerializer with ActiveModelSerializers::Adapter::Attributes (0.36ms)
+Completed 201 Created in 19ms (Views: 0.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/users/6" for ::1 at 2016-11-13 15:34:45 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (2.56ms)
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/users/6" for ::1 at 2016-11-13 15:45:10 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.7ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (15.43ms)
+Completed 200 OK in 36ms (Views: 18.4ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/api/drinks" for ::1 at 2016-11-13 15:45:41 +0000
+Processing by DrinksController#create as HTML
+  Parameters: {"drink"=>{"name"=>"Budweiser", "quantity"=>1, "units"=>2, "price"=>3.5}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "drinks" ("user_id", "name", "quantity", "units", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 6], ["name", "Budweiser"], ["quantity", 1], ["units", 2], ["price", #<BigDecimal:7fda07020128,'0.35E1',18(27)>], ["created_at", 2016-11-13 15:45:41 UTC], ["updated_at", 2016-11-13 15:45:41 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered DrinkSerializer with ActiveModelSerializers::Adapter::Attributes (0.49ms)
+Completed 201 Created in 16ms (Views: 2.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/users/6" for ::1 at 2016-11-13 15:45:41 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.7ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (5.48ms)
+Completed 200 OK in 9ms (Views: 5.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/users/6" for ::1 at 2016-11-13 15:46:12 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (3.96ms)
+Completed 200 OK in 8ms (Views: 4.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/users/6" for ::1 at 2016-11-13 15:58:45 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.5ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (12.92ms)
+Completed 200 OK in 40ms (Views: 15.3ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/api/login" for ::1 at 2016-11-13 16:11:27 +0000
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"alicia@alicia.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"alicia@alicia.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alicia@alicia.com"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (21.68ms)
+Completed 200 OK in 120ms (Views: 24.7ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/api/users/6" for ::1 at 2016-11-13 16:11:28 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.7ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (6.47ms)
+Completed 200 OK in 12ms (Views: 7.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/users/6" for ::1 at 2016-11-13 16:15:32 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (23.19ms)
+Completed 200 OK in 53ms (Views: 21.4ms | ActiveRecord: 9.7ms)
+
+
+Started POST "/api/login" for ::1 at 2016-11-13 21:43:20 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"alicia@alicia.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"alicia@alicia.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alicia@alicia.com"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (1.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (43.25ms)
+Completed 200 OK in 148ms (Views: 41.2ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/api/users/6" for ::1 at 2016-11-13 21:43:20 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (1.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (7.95ms)
+Completed 200 OK in 26ms (Views: 7.6ms | ActiveRecord: 9.5ms)
+
+
+Started POST "/api/login" for ::1 at 2016-11-13 21:50:07 +0000
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"alicia@alicia.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"alicia@alicia.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alicia@alicia.com"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.6ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (12.41ms)
+Completed 200 OK in 86ms (Views: 13.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/users/6" for ::1 at 2016-11-13 21:50:07 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.6ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (8.66ms)
+Completed 200 OK in 14ms (Views: 10.0ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/api/register" for ::1 at 2016-11-13 21:50:41 +0000
+Processing by AuthenticationsController#register as HTML
+  Parameters: {"username"=>"Bob", "firstName"=>"Bob", "lastName"=>"Bob", "image"=>"fillmurray.com/200/200", "email"=>"bob@bob.com", "password"=>"[FILTERED]", "passwordConfirmation"=>"[FILTERED]", "authentication"=>{"username"=>"Bob", "firstName"=>"Bob", "lastName"=>"Bob", "image"=>"fillmurray.com/200/200", "email"=>"bob@bob.com", "password"=>"[FILTERED]", "passwordConfirmation"=>"[FILTERED]"}}
+DEPRECATION WARNING: Method to_hash is deprecated and will be removed in Rails 5.1, as `ActionController::Parameters` no longer inherits from hash. Using this deprecated behavior exposes potential security problems. If you continue to use this method you may be creating a security vulnerability in your app that can be exploited. Instead, consider using one of these documented methods which are not deprecated: http://api.rubyonrails.org/v5.0.0.1/classes/ActionController/Parameters.html (called from merge! at /Users/aliciapearse/development/projects/wdi-project-4/wdi-project-4-api/app/controllers/authentications_controller.rb:28)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Bob"], ["LIMIT", 1]]
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "Bob"], ["email", "bob@bob.com"], ["password_digest", "$2a$10$0tDqarC5XphUvFxYSIA9U.2hH/rpPq4p9TaCWJqwCRSzkf4tn7SYG"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers]   [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 7]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.56ms)
+Completed 200 OK in 105ms (Views: 2.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/api/users/7" for ::1 at 2016-11-13 21:50:41 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mDrink Load (0.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."user_id" = $1[0m  [["user_id", 7]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.27ms)
+Completed 200 OK in 13ms (Views: 4.5ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/api/login" for ::1 at 2016-11-13 21:53:10 +0000
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"alicia@alicia.com", "authentication"=>{"email"=>"alicia@alicia.com"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alicia@alicia.com"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 401 Unauthorized in 70ms (Views: 0.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/login" for ::1 at 2016-11-13 21:53:11 +0000
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"alicia@alicia.com", "authentication"=>{"email"=>"alicia@alicia.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alicia@alicia.com"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 401 Unauthorized in 64ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/login" for ::1 at 2016-11-13 21:53:11 +0000
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"alicia@alicia.com", "authentication"=>{"email"=>"alicia@alicia.com"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alicia@alicia.com"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 401 Unauthorized in 65ms (Views: 0.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/login" for ::1 at 2016-11-13 21:53:24 +0000
+Processing by AuthenticationsController#login as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 401 Unauthorized in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/login" for ::1 at 2016-11-13 21:53:24 +0000
+Processing by AuthenticationsController#login as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
