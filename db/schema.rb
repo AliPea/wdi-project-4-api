@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 20161109205512) do
   create_table "drinks", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "name"
-    t.string   "image"
     t.integer  "quantity"
     t.integer  "units"
     t.decimal  "price",      precision: 8, scale: 2
@@ -38,7 +37,6 @@ ActiveRecord::Schema.define(version: 20161109205512) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "image"
     t.string "username"
     t.string "first_name"
     t.string "last_name"
