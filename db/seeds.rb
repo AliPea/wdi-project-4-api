@@ -1,7 +1,7 @@
 User.destroy_all
 
 u1 = User.create!({
-  image: "http://fillmurray.com/g/200/300"
+  image: "http://fillmurray.com/g/200/300",
   username: "Nat",
   first_name: "Nat",
   last_name: "Huitson",
@@ -11,7 +11,7 @@ u1 = User.create!({
 })
 
 u2 = User.create!({
-  image: "http://fillmurray.com/g/200/300"
+  image: "http://fillmurray.com/g/200/300",
   username: "Johnnie",
   first_name: "Johnnie",
   last_name: "de La Moriniere",
@@ -21,7 +21,7 @@ u2 = User.create!({
 })
 
 u3 = User.create!({
-  image: "http://fillmurray.com/g/200/300"
+  image: "http://fillmurray.com/g/200/300",
   username: "Alfredo",
   first_name: "Alfredo",
   last_name: "Maria",
@@ -40,7 +40,7 @@ d4 = u3.drinks.create!(name: "Anchor Steam", quantity: 2, units: 2, price: 3.00 
   { name: "Wine", image: "http://images.r.cruisecritic.co.uk/features/ships/top-25-tips/best-wine-hero.jpg" },
   { name: "Gin and Tonic", image: "http://goodthingsmagazine.com/wp-content/uploads/2015/05/Gin-and-tonic.jpg" },
   { name: "Cider", image: "http://www.nycider.com/images/hard-cider-lg.jpg" },
-  { name: "Rum and Coke", image: "http://search.chow.com/thumbnail/1280/800/www.chowstatic.com/assets/2015/02/10223_cuba_libre_3000.jpg },
+  { name: "Rum and Coke", image: "http://search.chow.com/thumbnail/1280/800/www.chowstatic.com/assets/2015/02/10223_cuba_libre_3000.jpg" },
 ].each do |menu|
   Menu.create!(menu)
 end
